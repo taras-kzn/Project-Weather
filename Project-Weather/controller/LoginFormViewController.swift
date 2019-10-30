@@ -11,7 +11,7 @@ import UIKit
 
 class LoginFormViewController: UIViewController {
     
-    var firstController = "firstController"
+    private var firstController = "firstController"
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordTextFild: UITextField!
