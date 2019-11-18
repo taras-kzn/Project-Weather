@@ -63,7 +63,7 @@ extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
 extension MyCitiesViewController: AddCityProtocol {
     
     func addCity(city: String) {
-        
+    
         if !cities.contains(city) {
             cities.append(city)
             tableView.reloadData()

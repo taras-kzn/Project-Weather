@@ -10,6 +10,9 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+
+    @IBOutlet weak var selectDayView: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let id = "WeatherCollectionViewCell"
@@ -29,7 +32,7 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
