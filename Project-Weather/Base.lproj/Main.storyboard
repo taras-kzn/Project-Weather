@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ff5-2l-Xme">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ff5-2l-Xme">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -269,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bYa-5k-tZ6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N9v-4e-8LG">
                                     <size key="itemSize" width="357" height="338"/>
@@ -327,19 +327,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpM-6s-njT" customClass="SelectDayControl" customModule="Project_Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HGP-xp-Im9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="DpM-6s-njT" firstAttribute="leading" secondItem="6po-Tj-6K5" secondAttribute="leading" id="6O6-0g-KbD"/>
                             <constraint firstItem="bYa-5k-tZ6" firstAttribute="leading" secondItem="6po-Tj-6K5" secondAttribute="leading" id="FFR-38-L0H"/>
+                            <constraint firstItem="bYa-5k-tZ6" firstAttribute="top" secondItem="DpM-6s-njT" secondAttribute="bottom" id="KuX-ph-g7S"/>
+                            <constraint firstItem="DpM-6s-njT" firstAttribute="trailing" secondItem="6po-Tj-6K5" secondAttribute="trailing" id="epH-9U-Y4b"/>
                             <constraint firstItem="6po-Tj-6K5" firstAttribute="trailing" secondItem="bYa-5k-tZ6" secondAttribute="trailing" id="fgN-x9-elZ"/>
-                            <constraint firstItem="bYa-5k-tZ6" firstAttribute="top" secondItem="6po-Tj-6K5" secondAttribute="top" id="hoz-UK-N1q"/>
                             <constraint firstItem="6po-Tj-6K5" firstAttribute="bottom" secondItem="bYa-5k-tZ6" secondAttribute="bottom" id="kL2-9i-ZQs"/>
+                            <constraint firstItem="DpM-6s-njT" firstAttribute="top" secondItem="6po-Tj-6K5" secondAttribute="top" id="sIc-gW-Coj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6po-Tj-6K5"/>
                     </view>
                     <navigationItem key="navigationItem" id="QDU-2B-OB0"/>
                     <connections>
                         <outlet property="collectionView" destination="bYa-5k-tZ6" id="QKe-G7-met"/>
+                        <outlet property="selectDayView" destination="DpM-6s-njT" id="avF-Ca-0DF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQN-AM-Bh0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
