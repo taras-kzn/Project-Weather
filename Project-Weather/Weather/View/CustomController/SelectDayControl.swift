@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum Day: Int, CaseIterable {
     case monday
     case tuesday
@@ -44,7 +43,6 @@ class SelectDayControl: UIControl {
     var dayButtons: [UIButton] = []
     var stackView: UIStackView!
     
-    
     override init(frame: CGRect) {
          super.init(frame: frame)
         self.setupView()
@@ -60,9 +58,7 @@ class SelectDayControl: UIControl {
         stackView.frame = bounds
     }
 
-    
     private func setupView() {
-        
         for day in Day.allCases {
             let button = UIButton(type: .system)
             button.setTitle(day.title, for: .normal)
@@ -78,7 +74,6 @@ class SelectDayControl: UIControl {
         stackView.alignment = .center
         stackView.distribution = .fillEqually
         addSubview(stackView)
-        
     }
     
     private func updateSelectedDay() {
