@@ -17,8 +17,27 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
            super.awakeFromNib()
+            
+        configView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+
+    }
+
+    
+    func configView() {
         iconImage.layer.masksToBounds = true
         iconImage.layer.shadowOpacity = 0.9
-        iconImage.layer.cornerRadius = 20.0
+        iconImage.layer.cornerRadius = 15
+        weatherLabel.layer.shadowOffset = .zero
+        weatherLabel.layer.shadowOpacity = 0.15
+        weatherLabel.backgroundColor = .clear
+        layer.cornerRadius = 20
+        layer.borderWidth = 1
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = .zero
     }
 }
