@@ -27,6 +27,8 @@ class AllCityesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
+        
+        
     }
 
 }
