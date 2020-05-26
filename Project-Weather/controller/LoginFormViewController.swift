@@ -22,7 +22,7 @@ class LoginFormViewController: UIViewController {
         
         let hideKeyboardGesture = UITapGestureRecognizer(target: self,
                                                          action: #selector(hideKeyboard))
-
+        
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
     
@@ -40,7 +40,17 @@ class LoginFormViewController: UIViewController {
                                                object: nil)
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+              
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
 
     @IBAction func loginButton(_ sender: Any) {
         
@@ -79,4 +89,6 @@ class LoginFormViewController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
+
+
 }

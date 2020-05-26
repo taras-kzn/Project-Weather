@@ -15,10 +15,4 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     
-    override func awakeFromNib() {
-           super.awakeFromNib()
-        iconImage.layer.masksToBounds = true
-        iconImage.layer.shadowOpacity = 0.9
-        iconImage.layer.cornerRadius = 20.0
-    }
 }
