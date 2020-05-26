@@ -24,6 +24,7 @@ class LoginFormViewController: UIViewController {
                                                          action: #selector(hideKeyboard))
 
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
