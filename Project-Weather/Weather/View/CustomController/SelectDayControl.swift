@@ -89,7 +89,7 @@ class SelectDayControl: UIControl {
     }
     
     @objc private func selectedDay(_ sender: UIButton) {
-        guard  let index = dayButtons.index(of: sender) else {
+        guard  let index = dayButtons.firstIndex(of: sender) else {
             return
         }
         guard let day = Day.init(rawValue: index) else {
