@@ -24,11 +24,13 @@ class MyCitiesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "addCity" {
             guard let destination = segue.destination as? AllCityesViewController  else {return}
             destination.cityDelegate = self
         }
     }
+    
 }
 
 extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -61,9 +63,11 @@ extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
 extension MyCitiesViewController: AddCityProtocol {
     
     func addCity(city: String) {
+    
         if !cities.contains(city) {
             cities.append(city)
             tableView.reloadData()
         }
     }
+    
 }
