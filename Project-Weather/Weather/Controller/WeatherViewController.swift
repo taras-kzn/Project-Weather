@@ -10,13 +10,10 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
-
     @IBOutlet weak var selectDayView: UIView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let id = "WeatherCollectionViewCell"
-    
     private let image = "45"
     
     override func viewDidLoad() {
@@ -24,9 +21,7 @@ class WeatherViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
     }
-
 }
 
 extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -41,7 +36,6 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.iconImage.image = UIImage(named: image)
         cell.weatherLabel.text = "30 C"
         cell.timeLabel.text = "30.08.2017 18:00"
-        
         return cell
     }
 

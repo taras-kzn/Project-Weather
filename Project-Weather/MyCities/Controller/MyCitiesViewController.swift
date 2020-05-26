@@ -21,16 +21,15 @@ class MyCitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: nil), forCellReuseIdentifier: MyCitiesTableViewCell.reuseid)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "addCity" {
             guard let destination = segue.destination as? AllCityesViewController  else {return}
             destination.cityDelegate = self
         }
     }
-    
 }
 
 extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -40,11 +39,11 @@ extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! MyCitiesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyCitiesTableViewCell.reuseid, for: indexPath) as! MyCitiesTableViewCell
         
         let arrayCity = cities[indexPath.row]
-        cell.cityNameLabel.text = arrayCity
-        
+        var icon = UIImage(named: "45")
+        cell.configure(city: arrayCity, image: icon)
         return cell
     }
     
@@ -63,11 +62,9 @@ extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
 extension MyCitiesViewController: AddCityProtocol {
     
     func addCity(city: String) {
-    
         if !cities.contains(city) {
             cities.append(city)
             tableView.reloadData()
         }
     }
-    
 }
