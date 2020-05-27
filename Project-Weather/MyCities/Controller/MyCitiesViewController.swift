@@ -21,6 +21,7 @@ class MyCitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        print("тест на слияние")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
