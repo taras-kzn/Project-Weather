@@ -22,6 +22,7 @@
 		84A7A7C6247EB9770019F4AE /* MyCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7C4247EB9770019F4AE /* MyCitiesTableViewCell.swift */; };
 		84A7A7C7247EB9770019F4AE /* MyCitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7A7C5247EB9770019F4AE /* MyCitiesTableViewCell.xib */; };
 		84A7A7CA247ED3100019F4AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7C9247ED3100019F4AE /* GradientView.swift */; };
+		84A7A7CD247EEEA70019F4AE /* WeatherCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7CC247EEEA60019F4AE /* WeatherCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		84A7A7C4247EB9770019F4AE /* MyCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		84A7A7C5247EB9770019F4AE /* MyCitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCitiesTableViewCell.xib; sourceTree = "<group>"; };
 		84A7A7C9247ED3100019F4AE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		84A7A7CC247EEEA60019F4AE /* WeatherCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		845DADA1247D591A00ABCE87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84A7A7CB247EEE6B0019F4AE /* CustomCollectionViewLayout */,
 				848A61B6238341A3002C0253 /* CustomController */,
 				8424746B236A3880007EEF98 /* WeatherCollectionViewCell.swift */,
 			);
@@ -222,6 +225,14 @@
 			path = GradientView;
 			sourceTree = "<group>";
 		};
+		84A7A7CB247EEE6B0019F4AE /* CustomCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				84A7A7CC247EEEA60019F4AE /* WeatherCollectionViewLayout.swift */,
+			);
+			path = CustomCollectionViewLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +308,7 @@
 				848A61B523833864002C0253 /* SelectDayControl.swift in Sources */,
 				8424746C236A3880007EEF98 /* WeatherCollectionViewCell.swift in Sources */,
 				84A7A7CA247ED3100019F4AE /* GradientView.swift in Sources */,
+				84A7A7CD247EEEA70019F4AE /* WeatherCollectionViewLayout.swift in Sources */,
 				845F6F69235641EA00DE9ED5 /* LoginFormViewController.swift in Sources */,
 				84247460236A0F1A007EEF98 /* AllCityesViewController.swift in Sources */,
 				845F6F55235641BF00DE9ED5 /* AppDelegate.swift in Sources */,
