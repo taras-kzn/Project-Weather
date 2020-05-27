@@ -13,7 +13,6 @@ class MyCitiesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let id = "MyCitiesTableViewCell"    
     private var cities = [String]()
     
     override func viewDidLoad() {
@@ -21,7 +20,7 @@ class MyCitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        print("тест на слияние")
+        tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: nil), forCellReuseIdentifier: MyCitiesTableViewCell.cityCellID)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +30,6 @@ class MyCitiesViewController: UIViewController {
             destination.cityDelegate = self
         }
     }
-    
 }
 
 extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -41,10 +39,10 @@ extension MyCitiesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! MyCitiesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyCitiesTableViewCell.cityCellID, for: indexPath) as! MyCitiesTableViewCell
         
         let arrayCity = cities[indexPath.row]
-        cell.cityNameLabel.text = arrayCity
+        cell.gonfigure(city: arrayCity, cityImage:UIImage(named: "45") )
         
         return cell
     }
