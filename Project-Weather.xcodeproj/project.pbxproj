@@ -21,6 +21,7 @@
 		848A61B523833864002C0253 /* SelectDayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A61B423833864002C0253 /* SelectDayControl.swift */; };
 		84A7A7C6247EB9770019F4AE /* MyCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7C4247EB9770019F4AE /* MyCitiesTableViewCell.swift */; };
 		84A7A7C7247EB9770019F4AE /* MyCitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7A7C5247EB9770019F4AE /* MyCitiesTableViewCell.xib */; };
+		84A7A7CA247ED3100019F4AE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7A7C9247ED3100019F4AE /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		848A61B423833864002C0253 /* SelectDayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDayControl.swift; sourceTree = "<group>"; };
 		84A7A7C4247EB9770019F4AE /* MyCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		84A7A7C5247EB9770019F4AE /* MyCitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCitiesTableViewCell.xib; sourceTree = "<group>"; };
+		84A7A7C9247ED3100019F4AE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				84247463236A11FF007EEF98 /* MyCities */,
 				8424745A236A0E93007EEF98 /* AllCitys */,
 				84247468236A384B007EEF98 /* Weather */,
+				84A7A7C8247ED2F70019F4AE /* GradientView */,
 				845DADA4247D597900ABCE87 /* Appllication */,
 				845DADA8247D59F800ABCE87 /* Resource */,
 			);
@@ -209,6 +212,14 @@
 				848A61B423833864002C0253 /* SelectDayControl.swift */,
 			);
 			path = CustomController;
+			sourceTree = "<group>";
+		};
+		84A7A7C8247ED2F70019F4AE /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				84A7A7C9247ED3100019F4AE /* GradientView.swift */,
+			);
+			path = GradientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			files = (
 				848A61B523833864002C0253 /* SelectDayControl.swift in Sources */,
 				8424746C236A3880007EEF98 /* WeatherCollectionViewCell.swift in Sources */,
+				84A7A7CA247ED3100019F4AE /* GradientView.swift in Sources */,
 				845F6F69235641EA00DE9ED5 /* LoginFormViewController.swift in Sources */,
 				84247460236A0F1A007EEF98 /* AllCityesViewController.swift in Sources */,
 				845F6F55235641BF00DE9ED5 /* AppDelegate.swift in Sources */,
