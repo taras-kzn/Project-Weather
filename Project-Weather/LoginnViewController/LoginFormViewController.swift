@@ -12,10 +12,15 @@ import UIKit
 class LoginFormViewController: UIViewController {
     
     private var firstController = "firstController"
+    var animationLoginController : AnimationLoginController?
 
+    @IBOutlet var passswordLabel: UILabel!
+    @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var loginLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordTextFild: UITextField!
     @IBOutlet weak var loginTextFild: UITextField!
+    @IBOutlet var authButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,12 @@ class LoginFormViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        animationLoginController = AnimationLoginController()
+        animationLoginController?.animateAuthButton(button: authButton)
+        animationLoginController?.animateFieldsAppearing(loginTextField: loginTextFild, passwordTextField: passwordTextFild)
+        animationLoginController?.animationTitleWeather(weatherLabel: weatherLabel, view: self.view)
+        animationLoginController?.animationLabel(loginLabel: loginLabel, passwordLabel: passswordLabel, view: self.view)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWasShown),
@@ -89,6 +100,5 @@ class LoginFormViewController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
-
 
 }

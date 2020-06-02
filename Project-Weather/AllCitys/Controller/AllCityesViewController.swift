@@ -31,11 +31,9 @@ class AllCityesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-<<<<<<< HEAD
         tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: nil), forCellReuseIdentifier: MyCitiesTableViewCell.cityCellID)
 
-=======
->>>>>>> master
+
     }
 }
 
