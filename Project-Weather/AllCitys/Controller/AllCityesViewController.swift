@@ -17,8 +17,13 @@ class AllCityesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let id = "AllCityesTableViewCell"
-    private let cityes = ["Москва", "Казань", "Питер", "Екатеренбург", "Сочи"]
+    private let cityesArray = [(city: "Москва", image: #imageLiteral(resourceName: "nssl0046")),
+                               (city: "Казань", image: #imageLiteral(resourceName: "nssl0043")),
+                               (city: "Питер", image: #imageLiteral(resourceName: "nssl0033")),
+                               (city: "Екатеренбург", image: #imageLiteral(resourceName: "nssl0046")),
+                               (city: "Сочи", image: #imageLiteral(resourceName: "nssl0042"))
+    ]
+    
     var cityDelegate: AddCityProtocol?
     
     override func viewDidLoad() {
@@ -26,28 +31,31 @@ class AllCityesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-    }
+<<<<<<< HEAD
+        tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: nil), forCellReuseIdentifier: MyCitiesTableViewCell.cityCellID)
 
+=======
+>>>>>>> master
+    }
 }
 
 extension AllCityesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityes.count
+        return cityesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! AllCityesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyCitiesTableViewCell.cityCellID, for: indexPath) as! MyCitiesTableViewCell
         
-        let array = cityes[indexPath.row]
-        cell.cityNameLabel.text = array
-        
+        let array = cityesArray[indexPath.row]
+        cell.gonfigure(city: array.city, cityImage: array.image)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectCity = cityes[indexPath.row]
-        self.cityDelegate?.addCity(city: selectCity)
+        let selectCity = cityesArray[indexPath.row]
+        self.cityDelegate?.addCity(city: selectCity.city)
         navigationController?.popViewController(animated: true)
     }
 
