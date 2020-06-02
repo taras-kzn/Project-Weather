@@ -127,9 +127,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="eSQ-9J-lu9"/>
                     <connections>
+                        <outlet property="authButton" destination="zjH-Vz-1yJ" id="tij-au-qS9"/>
+                        <outlet property="loginLabel" destination="4rn-G8-d71" id="M57-JE-Pgk"/>
                         <outlet property="loginTextFild" destination="nkC-Cp-LAb" id="jtk-kl-Oz4"/>
+                        <outlet property="passswordLabel" destination="nI8-UA-7SP" id="jhM-ps-8c9"/>
                         <outlet property="passwordTextFild" destination="LZX-Q2-cMS" id="f0n-oK-fBz"/>
                         <outlet property="scrollView" destination="Cf7-xT-DG5" id="5N6-Oa-1TO"/>
+                        <outlet property="weatherLabel" destination="8rs-eW-uhy" id="dNC-FO-2wc"/>
                         <segue destination="oBl-02-pKn" kind="show" identifier="firstController" id="ijC-1N-CZa"/>
                     </connections>
                 </viewController>
@@ -194,14 +198,14 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCityesTableViewCell" id="bOW-Ga-QXh" customClass="AllCityesTableViewCell" customModule="Project_Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="156" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOW-Ga-QXh" id="iKA-o9-bqS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-eW-PGG">
-                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -252,14 +256,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCitiesTableViewCell" id="ySr-cS-6t2" customClass="MyCitiesTableViewCell" customModule="Project_Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ySr-cS-6t2" id="ECD-Cb-XLT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DC1-if-gD0">
-                                                    <rect key="frame" x="20" y="11" width="374" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

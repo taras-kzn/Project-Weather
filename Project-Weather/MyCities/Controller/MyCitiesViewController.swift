@@ -20,10 +20,8 @@ class MyCitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-<<<<<<< HEAD
         tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: nil), forCellReuseIdentifier: MyCitiesTableViewCell.cityCellID)
-=======
->>>>>>> master
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
