@@ -14,15 +14,13 @@ class AnimationLoginController {
     func animationTitleWeather(weatherLabel: UILabel, view: UIView) {
         weatherLabel.transform = CGAffineTransform(translationX: 0, y: -view.bounds.height / 2)
         
-        UIView.animate(withDuration: 1,
-                       delay: 1,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0,
-                       options: .curveEaseOut,
-                       animations: {
-                        weatherLabel.transform = .identity
-        },
-                       completion: nil)
+        let animator = UIViewPropertyAnimator(duration: 1,
+                                              dampingRatio: 0.5,
+                                              animations: {
+                                                  weatherLabel.transform = .identity
+        })
+
+        animator.startAnimation(afterDelay: 1)
     }
     
     func animationLabel(loginLabel: UILabel, passwordLabel: UILabel, view: UIView) {
@@ -44,13 +42,22 @@ class AnimationLoginController {
         let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
         fadeInAnimation.fromValue = 0
         fadeInAnimation.toValue = 1
-        fadeInAnimation.duration = 1
-        fadeInAnimation.beginTime = CACurrentMediaTime() + 1
-        fadeInAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        fadeInAnimation.fillMode = CAMediaTimingFillMode.backwards
-        
-        loginTextField.layer.add(fadeInAnimation, forKey: nil)
-        passwordTextField.layer.add(fadeInAnimation, forKey: nil)
+
+        let scaleAnimation = CASpringAnimation(keyPath: "transform.scale")
+        scaleAnimation.fromValue = 0
+        scaleAnimation.toValue = 1
+        scaleAnimation.stiffness = 150
+        scaleAnimation.mass = 2
+
+        let animationsGroup = CAAnimationGroup()
+        animationsGroup.duration = 1
+        animationsGroup.beginTime = CACurrentMediaTime() + 1
+        animationsGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        animationsGroup.fillMode = CAMediaTimingFillMode.backwards
+        animationsGroup.animations = [fadeInAnimation, scaleAnimation]
+
+        loginTextField.layer.add(animationsGroup, forKey: nil)
+        passwordTextField.layer.add(animationsGroup, forKey: nil)
     }
     
     func animateAuthButton(button: UIButton) {
