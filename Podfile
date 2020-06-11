@@ -3,7 +3,7 @@ platform :ios, '11.0'
 
 target 'Project-Weather' do
   use_frameworks!
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.8'
 	
 
   # Pods for Project-Weather
