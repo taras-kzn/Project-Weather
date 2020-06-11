@@ -34,6 +34,7 @@ class LoginFormViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
         animationLoginController = AnimationLoginController()
         animationLoginController?.animateAuthButton(button: authButton)
         animationLoginController?.animateFieldsAppearing(loginTextField: loginTextFild, passwordTextField: passwordTextFild)
