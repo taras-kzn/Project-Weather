@@ -12,18 +12,19 @@ class WeatherViewController: UIViewController {
 
 
     @IBOutlet weak var selectDayView: UIView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let id = "WeatherCollectionViewCell"
-    
     private let image = "45"
+    let weacherService = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        weacherService.loadWeatherData(city: "Moscow")
 
     }
 
