@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 
 class WeatherService {
@@ -15,7 +16,7 @@ class WeatherService {
     let baseUrl = "http://api.openweathermap.org"
     let apiKey = "92cabe9523da26194b02974bfcd50b7e"
     
-    func loadWeatherData(city: String) {
+    func loadWeatherData(city: String, completion: @escaping ([Weather]) -> Void ) {
         
         let path = "/data/2.5/forecast"
         let parameters: Parameters = [
@@ -26,8 +27,10 @@ class WeatherService {
         
         let url = baseUrl + path
 
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { repsonse in
-            print(repsonse.value)
+        Alamofire.request(url, method: .get, parameters: parameters).responseData { repsonse in
+            guard let data = repsonse.value else { return }
+            let weather = try! JSONDecoder().decode(WeatherResponse.self, from: data).list
+            completion(weather)
         }
     }    
 }
