@@ -8,21 +8,22 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class WeatherResponse: Decodable {
     let list: [Weather]
 }
 
-class Weather: Decodable {
-    dynamic var date = 0.0
-    dynamic var temp = 0.0
-    dynamic var pressure = 0.0
-    dynamic var humidity = 0
-    dynamic var weatherName = ""
-    dynamic var weatherIcon = ""
-    dynamic var windSpeed = 0.0
-    dynamic var windDegrees = 0.0
-    dynamic var city = ""
+class Weather: Object, Decodable {
+    @objc dynamic var date = 0.0
+    @objc dynamic var temp = 0.0
+    @objc dynamic var pressure = 0.0
+    @objc dynamic var humidity = 0
+    @objc dynamic var weatherName = ""
+    @objc dynamic var weatherIcon = ""
+    @objc dynamic var windSpeed = 0.0
+    @objc dynamic var windDegrees = 0.0
+    @objc dynamic var city = ""
     
     enum CodingKeys: String, CodingKey {
            case date = "dt"
