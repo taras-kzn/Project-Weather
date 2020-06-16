@@ -25,6 +25,10 @@ class LoginFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+            performSegue(withIdentifier: firstController, sender: self)
+        }
+        
         let hideKeyboardGesture = UITapGestureRecognizer(target: self,
                                                          action: #selector(hideKeyboard))
         
@@ -70,6 +74,7 @@ class LoginFormViewController: UIViewController {
         let password = passwordTextFild.text!
         
         if login == "a" && password == "a" {
+            UserDefaults.standard.set(true, forKey: "isLogin")
             performSegue(withIdentifier: firstController, sender: self)
         } else {
             loginError()

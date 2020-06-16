@@ -17,6 +17,8 @@ class WeatherViewController: UIViewController {
     private let id = "WeatherCollectionViewCell"
     private let image = "45"
     let weacherService = WeatherService()
+    var weathers = [Weather]()
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,24 +26,25 @@ class WeatherViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        weacherService.loadWeatherData(city: "Moscow")
-
+        weacherService.loadWeatherData(city: "Moscow", completion: { [weak self] weathers in
+            self?.weathers = weathers
+            self?.collectionView.reloadData()
+            
+        })
     }
-
 }
 
 extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return weathers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! WeatherCollectionViewCell
         
-        cell.iconImage.image = UIImage(named: image)
-        cell.weatherLabel.text = "30 C"
-        cell.timeLabel.text = "30.08.2017 18:00"
+        let weather = weathers[indexPath.row]
+        cell.configure(whithWeather: weather)
         
         return cell
     }

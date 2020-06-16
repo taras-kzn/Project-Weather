@@ -8,14 +8,27 @@
 
 import Foundation
 import Alamofire
+import UIKit
+import RealmSwift
 
 
 class WeatherService {
     
-    let baseUrl = "http://api.openweathermap.org"
-    let apiKey = "92cabe9523da26194b02974bfcd50b7e"
+    private let baseUrl = "http://api.openweathermap.org"
+    private let apiKey = "92cabe9523da26194b02974bfcd50b7e"
     
-    func loadWeatherData(city: String) {
+    func saveWeatherData(_ weathers: [Weather]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(weathers)
+            try realm.commitWrite()
+        } catch  {
+            print(error)
+        }
+    }
+    
+    func loadWeatherData(city: String, completion: @escaping ([Weather]) -> Void ) {
         
         let path = "/data/2.5/forecast"
         let parameters: Parameters = [
@@ -26,8 +39,11 @@ class WeatherService {
         
         let url = baseUrl + path
 
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { repsonse in
-            print(repsonse.value)
+        Alamofire.request(url, method: .get, parameters: parameters).responseData { repsonse in
+            guard let data = repsonse.value else { return }
+            let weather = try! JSONDecoder().decode(WeatherResponse.self, from: data).list
+            self.saveWeatherData(weather)
+            completion(weather)
         }
     }    
 }

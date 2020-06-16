@@ -16,6 +16,12 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     
+    static let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yyyy HH.mm"
+        return df
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,4 +37,12 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         iconImage.layer.cornerRadius = 15
     }
     
+    func configure(whithWeather weather: Weather) {
+        let date = Date(timeIntervalSince1970: weather.date)
+        let stringDate = WeatherCollectionViewCell.dateFormatter.string(from: date)
+        
+        weatherLabel.text = String(weather.temp)
+        timeLabel.text = stringDate
+        iconImage.image = UIImage(named: weather.weatherIcon)
+    }
 }
