@@ -1,82 +1,82 @@
 # Xcode
 #
-# gitignore авторы: не забудьте обновить Global / Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-# # Построение сгенерировано
-построить /
-DerivedData /
+## Build generated
+build/
+DerivedData/
 
-# # Различные настройки
-* .pbxuser
-! default.pbxuser
-* .mode1v3
-! default.mode1v3
-* .mode2v3
-! default.mode2v3
-* .perspectivev3
-! default.perspectivev3
-xcuserdata /
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
 
-# # Другое
-* .moved-в сторону
-* .xccheckout
-* .xcscmblueprint
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
 
-# # Obj-C / Swift специфичный
-* .hmap
-* .ipa
-* .dSYM.zip
-* .dSYM
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
 
-# # Детские площадки
+## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
 
 # Swift Package Manager
 #
-# Добавьте эту строку, если вы хотите избежать проверки исходного кода из зависимостей Swift Package Manager.
-# Пакеты /
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
 # Package.pins
 # Package.resolved
-.build /
+.build/
 
 # CocoaPods
 #
-# Мы не рекомендуем добавлять каталог Pods в ваш .gitignore. Однако
-# вы должны судить сами, плюсы и минусы упоминаются по адресу:
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Стручки /
+# Pods/
 #
-# Добавьте эту строку, если вы хотите избежать проверки исходного кода из рабочего пространства Xcode
-# * .xcworkspace
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
 
-# Карфаген
+# Carthage
 #
-# Добавьте эту строку, если вы хотите избежать проверки исходного кода из зависимостей Карфагена.
-# Карфаген / Оформить заказ
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
 
-Карфаген / Строить
+Carthage/Build
 
-# Accio управление зависимостями
-Зависимости /
-.accio /
+# Accio dependency management
+Dependencies/
+.accio/
 
 # fastlane
 #
-# Рекомендуется не хранить скриншоты в git-репо. Вместо этого используйте fastlane, чтобы заново сгенерировать
-# скриншоты, когда они нужны.
-# Для получения дополнительной информации о рекомендуемом посещении установки:
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-Fastlane / report.xml
-fastlane / Preview.html
-fastlane / скриншоты / ** / * .png
-fastlane / test_output
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
 
-# Внедрение кода
+# Code Injection
 #
-# После новых инструментов внедрения кода создается сгенерированная папка / iOSInjectionProject
+# After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
-iOSInjectionProject /
+iOSInjectionProject/
