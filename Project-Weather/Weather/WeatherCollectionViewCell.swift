@@ -28,6 +28,14 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         configView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        weatherLabel.text = nil
+        iconImage.image = nil
+        timeLabel.text = nil
+    }
+    
     func configView() {
         weatherView.layer.cornerRadius = 30
         weatherView.layer.shadowOpacity = 0.7
